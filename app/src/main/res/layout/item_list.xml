@@ -25,7 +25,9 @@
                 android:layout_marginLeft="25dp"
                 android:layout_width="200dp"
                 android:layout_height="250dp"
-                android:layout_marginRight="150dp" />
+                android:layout_marginRight="150dp"
+                android:src="@drawable/imgphone"
+                />
 
             <TextView
                 android:id="@+id/tx_phone_name"
@@ -55,9 +57,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:fontFamily="sans-serif-black"
-                android:layout_marginRight="45dp"
+                android:layout_marginRight="49dp"
                 android:layout_gravity="center"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:text="Harga Ngab"/>
 
 
