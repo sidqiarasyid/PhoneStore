@@ -22,6 +22,8 @@
         android:foreground="?attr/selectableItemBackground"
         app:menu="@menu/menu"
         android:background="@color/white"
-        app:itemIconTint="@color/navitem"/>
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
