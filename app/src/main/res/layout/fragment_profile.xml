@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Profile"
+    android:background="#F0E5CF"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:clickable="true"
+        android:layout_margin="30dp"
+        android:layout_gravity="end"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/keranjang"/>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/foto_profile"/>
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardCornerRadius="50dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="Username"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"/>
+            <TextView
+                android:textSize="15dp"
+                android:layout_marginTop="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Raden Umar Said Kudus"
+                android:textAlignment="center"
+                android:textColor="#B4B1AE"/>
+            <View
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="#B4B1AE"
+                android:layout_marginTop="23dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <TextView
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="Email"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"/>
+            <TextView
+                android:textSize="15dp"
+                android:layout_marginTop="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="RadenUmarSiad@gmail.com"
+                android:textAlignment="center"
+                android:textColor="#B4B1AE"/>
+            <View
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="#B4B1AE"
+                android:layout_marginTop="23dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <TextView
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="Phone"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"/>
+            <TextView
+                android:textSize="15dp"
+                android:layout_marginTop="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="000 999 888 666"
+                android:textAlignment="center"
+                android:textColor="#B4B1AE"/>
+            <View
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="#B4B1AE"
+                android:layout_marginTop="23dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <Button
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:text="Edit Profile"
+                android:layout_gravity="center"
+                android:layout_width="276dp"
+                android:layout_height="45dp"/>
 
-</FrameLayout>
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
