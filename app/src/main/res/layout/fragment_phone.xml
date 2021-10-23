@@ -30,20 +30,77 @@
             <Button
                 android:layout_width="77dp"
                 android:layout_height="31dp"
-                android:background="@color/white"
+                android:background="@drawable/roundedbtn"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="All"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
-
-
-
-
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"/>
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="31dp"
+                android:background="@drawable/roundedbtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Oppo"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                />
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="31dp"
+                android:background="@drawable/roundedbtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Apple"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                />
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="31dp"
+                android:background="@drawable/roundedbtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Asus"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                />
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="31dp"
+                android:background="@drawable/roundedbtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Xiaomi"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                />
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="31dp"
+                android:background="@drawable/roundedbtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Google"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                />
 
         </LinearLayout>
 
     </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvlist"/>
 
 
 
