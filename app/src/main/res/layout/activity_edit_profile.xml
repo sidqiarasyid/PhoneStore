@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileActivity"
+    android:background="#F0E5CF"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:text="Edit Profile"/>
+    
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/foto_profile"/>
+
+    <EditText
+        android:id="@+id/txChangeUsername"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:textColorHint="#B4B1AE"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Username"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/txChangeEmail"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#B4B1AE"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:inputType="textEmailSubject" />
+    <EditText
+        android:id="@+id/txChangePhoneNumber"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#B4B1AE"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Phone Number"
+        android:inputType="phone" />
+    <Button
+        android:id="@+id/btnSave"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:text="Save"
+        android:layout_gravity="center"
+        android:layout_width="276dp"
+        android:layout_height="45dp"/>
+
+</LinearLayout>

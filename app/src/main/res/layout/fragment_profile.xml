@@ -44,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"/>
             <TextView
+                android:id="@+id/txUsername"
                 android:textSize="15dp"
                 android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
@@ -68,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"/>
             <TextView
+                android:id="@+id/txEmail"
                 android:textSize="15dp"
                 android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
@@ -92,6 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"/>
             <TextView
+                android:id="@+id/txPhoneNumber"
                 android:textSize="15dp"
                 android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
@@ -107,6 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
             <Button
+                android:id="@+id/btnEditProfile"
                 android:textSize="17dp"
                 android:textStyle="bold"
                 android:layout_marginTop="25dp"
