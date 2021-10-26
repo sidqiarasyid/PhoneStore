@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0E5CF"
+    tools:context=".Register">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/imglogin"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="Indonesia.Espanol.More..."/>
+
+    <EditText
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:id="@+id/insUsername"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:textColorHint="#B4B1AE"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/kotak"
+        android:inputType="text"
+        android:hint="Username" />
+
+    <EditText
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:id="@+id/insEmail"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:textColorHint="#B4B1AE"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/kotak"
+        android:inputType="textEmailAddress"
+        android:hint="Email" />
+
+    <EditText
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/insPassword"
+        android:background="@drawable/kotak"
+        android:textColorHint="#B4B1AE"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Password"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:text="Register"
+        android:background="@drawable/btnlogin"
+        android:layout_gravity="center"
+        android:layout_width="276dp"
+        android:layout_height="45dp"/>
+
+    <TextView
+        android:id="@+id/btnBackToLogin"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:clickable="true"
+        android:text="Back to Login"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginLeft="160dp"
+        />
+</LinearLayout>
+
