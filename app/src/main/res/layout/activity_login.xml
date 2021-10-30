@@ -12,12 +12,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log in"
-        android:fontFamily="@font/montserrat_bold"
-        android:textSize="40dp"
-        android:textColor="@color/black"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Log in"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
 
     <ImageView
         android:layout_width="wrap_content"

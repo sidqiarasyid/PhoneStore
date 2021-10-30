@@ -18,6 +18,7 @@ class LoginHelper extends SQLiteOpenHelper {
     public static final String rov_id = "_id";
     public static final String rov_username = "Username";
     public static final String rov_password = "Password";
+    public static final String rov_email = "Email";
 
     private SQLiteDatabase db;
 
@@ -29,7 +30,7 @@ class LoginHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + table_name + "(" + rov_id + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + rov_username + " TEXT," + rov_password + " TEXT)";
+                + rov_username + " TEXT," + rov_email + "TEXT," + rov_password + " TEXT)";
         db.execSQL(query);
     }
 
@@ -40,6 +41,9 @@ class LoginHelper extends SQLiteOpenHelper {
 
     public void insertData(ContentValues values){
         db.insert(table_name, null, values);
+    }
+    public void showData(){
+
     }
 
     public boolean checkUser(String username, String password){

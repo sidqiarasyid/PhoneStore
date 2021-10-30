@@ -2,37 +2,94 @@ package com.danta.sidqi.phonestore;
 
 import java.io.Serializable;
 
-import io.realm.RealmObject;
 
-public class Model extends RealmObject implements Serializable{
-    private String Brand;
-    private String PhoneName;
-    private String Image;
+
+public class Model {
+    private String phoneName;
+    private String image;
+    private String detailUrl;
+    private String releaseDate;
+    private String os;
+    private String storage;
+    private String dimension;
+    private String brand;
+    private String thumbnail;
+
+
+
 
     public Model() {
     }
 
-    public String getBrand() {
-        return Brand;
-    }
-
-    public void setBrand(String brand) {
-        Brand = brand;
-    }
-
     public String getPhoneName() {
-        return PhoneName;
+        return phoneName;
     }
 
     public void setPhoneName(String phoneName) {
-        PhoneName = phoneName;
+        this.phoneName = phoneName;
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
     public void setImage(String image) {
-        Image = image;
+        this.image = image;
+    }
+
+    public String getDetailUrl() {
+        return detailUrl;
+    }
+
+    public void setDetailUrl(String detailUrl) {
+        this.detailUrl = detailUrl;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public String getStorage() {
+        return storage;
+    }
+
+    public void setStorage(String storage) {
+        this.storage = storage;
+    }
+
+    public String getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(String dimension) {
+        this.dimension = dimension;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

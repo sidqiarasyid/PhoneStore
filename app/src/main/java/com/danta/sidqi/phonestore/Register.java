@@ -58,6 +58,7 @@ public class Register extends AppCompatActivity {
                 }else {
                     values.put(LoginHelper.rov_username, String.valueOf(Username));
                     values.put(LoginHelper.rov_password, String.valueOf(Password));
+                    values.put(LoginHelper.rov_email, String.valueOf(Email));
                     helper.insertData(values);
 
                     Toast.makeText(Register.this, "Register Sukses", Toast.LENGTH_SHORT).show();
