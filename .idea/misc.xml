@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Gavin.LAPTOP-UKRO42LJ/AndroidStudioProjects/PhoneStore/app/src/main/res/layout/item_list.xml" value="0.1" />
+        <entry key="..\:/Project/ProjectApp/PhoneStore/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2755208333333333" />
+        <entry key="..\:/Project/ProjectApp/PhoneStore/app/src/main/res/layout-v28/activity_detail.xml" value="0.25" />
+        <entry key="..\:/Project/ProjectApp/PhoneStore/app/src/main/res/layout/activity_cart.xml" value="0.25407608695652173" />
+        <entry key="..\:/Project/ProjectApp/PhoneStore/app/src/main/res/layout/activity_detail.xml" value="0.32046678635547576" />
+        <entry key="..\:/Project/ProjectApp/PhoneStore/app/src/main/res/layout/activity_login.xml" value="0.19972826086956522" />
+        <entry key="..\:/Project/ProjectApp/PhoneStore/app/src/main/res/layout/home_item.xml" value="0.19972826086956522" />
+        <entry key="app/src/main/res/drawable/roundedbtn.xml" value="0.19814814814814816" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.18333333333333332" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1574074074074074" />
+        <entry key="app/src/main/res/layout/fragment_phone.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/home_item.xml" value="0.17037037037037037" />
+        <entry key="app/src/main/res/layout/item_list.xml" value="0.17037037037037037" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
       </map>
     </option>
   </component>
