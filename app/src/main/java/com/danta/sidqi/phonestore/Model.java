@@ -21,6 +21,12 @@ public class Model {
     public Model() {
     }
 
+    public Model(String phone_name, String image, String detail) {
+        this.phoneName = phone_name;
+        this.image = image;
+        this.detailUrl = detail;
+    }
+
     public String getPhoneName() {
         return phoneName;
     }
