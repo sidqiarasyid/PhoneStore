@@ -1,5 +1,6 @@
 package com.danta.sidqi.phonestore;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ThemedSpinnerAdapter;
 
@@ -10,11 +11,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
 
@@ -22,11 +29,18 @@ public class Register extends AppCompatActivity {
     EditText username, email, password;
     Button btnRegister;
     LoginHelper helper;
+    FirebaseAuth registerAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        if (registerAuth != null){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
 
         helper= new LoginHelper(this);
 
@@ -34,6 +48,7 @@ public class Register extends AppCompatActivity {
         email = findViewById(R.id.insEmail);
         password = findViewById(R.id.insPassword);
         btnRegister = findViewById(R.id.btnRegister);
+        registerAuth = FirebaseAuth.getInstance();
 
         TextView btnBackToLogin = (TextView) findViewById(R.id.btnBackToLogin);
 
@@ -47,24 +62,32 @@ public class Register extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Username = username.getText().toString();
-                Email = email.getText().toString();
-                Password = password.getText().toString();
+                String emailval = email.getText().toString();
+                String passwordval = password.getText().toString();
 
-                ContentValues values =new ContentValues();
-
-              if (Password.equals("") || Username.equals("")){
-                    Toast.makeText(Register.this, "Username atau Password tidak bisa dikosongkan", Toast.LENGTH_SHORT).show();
-                }else {
-                    values.put(LoginHelper.rov_username, String.valueOf(Username));
-                    values.put(LoginHelper.rov_password, String.valueOf(Password));
-                    values.put(LoginHelper.rov_email, String.valueOf(Email));
-                    helper.insertData(values);
-
-                    Toast.makeText(Register.this, "Register Sukses", Toast.LENGTH_SHORT).show();
-                    finish();
+                if (TextUtils.isEmpty(emailval)){
+                    email.setError("Email is Required");
                 }
+                if (TextUtils.isEmpty(passwordval)){
+                    password.setError("Password is required");
+                }
+                if (password.length() < 6){
+                    password.setError("Password must be more than 6");
+                }
+
+                registerAuth.createUserWithEmailAndPassword(emailval, passwordval).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(Register.this, "Register Complete", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else {
+                            Toast.makeText(Register.this, "Register Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
+
     }
 }

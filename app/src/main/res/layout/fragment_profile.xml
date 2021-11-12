@@ -5,19 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Profile"
     android:background="#F0E5CF"
     android:orientation="vertical">
 
-    <ImageView
-        android:clickable="true"
-        android:layout_margin="30dp"
-        android:layout_gravity="end"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/keranjang"/>
 
     <ImageView
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -51,7 +44,7 @@
                 android:layout_height="25dp"
                 android:text="Raden Umar Said Kudus"
                 android:textAlignment="center"
-                android:textColor="#B4B1AE"/>
+                android:textColor="@color/black"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -68,15 +61,17 @@
                 android:text="Email"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"/>
+
             <TextView
                 android:id="@+id/txEmail"
-                android:textSize="15dp"
-                android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
+                android:layout_marginTop="17dp"
                 android:text="RadenUmarSiad@gmail.com"
                 android:textAlignment="center"
-                android:textColor="#B4B1AE"/>
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -101,7 +96,7 @@
                 android:layout_height="25dp"
                 android:text="000 999 888 666"
                 android:textAlignment="center"
-                android:textColor="#B4B1AE"/>
+                android:textColor="@color/black"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -114,7 +109,7 @@
                 android:textSize="17dp"
                 android:textStyle="bold"
                 android:layout_marginTop="25dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/bg"
                 android:textColor="@color/black"
                 android:textAllCaps="false"
                 android:text="Edit Profile"

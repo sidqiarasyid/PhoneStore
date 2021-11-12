@@ -19,6 +19,7 @@ class ReqAdapter extends RecyclerView.Adapter<ReqAdapter.ReqViewHolder> {
     ArrayList<Model> desclist;
 
     public ReqAdapter(ArrayList<Model> arrayList){
+
         this.desclist = arrayList;
     }
 
@@ -33,17 +34,22 @@ class ReqAdapter extends RecyclerView.Adapter<ReqAdapter.ReqViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ReqViewHolder holder, int position) {
         holder.phone_name.setText(desclist.get(position).getPhoneName());
-        Picasso.get().load(desclist.get(position).getImage()).into(holder.img);
+        Picasso.get()
+                .load(desclist.get(position)
+                        .getImage())
+                .resize(100, 150)
+                .error(R.drawable.imgphone)
+                .into(holder.img);
 
     }
 
     @Override
-    public int getItemCount() { return (desclist != null )? desclist.size() : 0; }
+    public int getItemCount() { return desclist.size(); }
 
-    public class ReqViewHolder extends RecyclerView.ViewHolder {
-        private TextView phone_name;
-        private ImageView img;
-        private CardView container;
+    public static class ReqViewHolder extends RecyclerView.ViewHolder {
+        private final TextView phone_name;
+        private final ImageView img;
+        private final CardView container;
 
         public ReqViewHolder(@NonNull View itemView) {
             super(itemView);

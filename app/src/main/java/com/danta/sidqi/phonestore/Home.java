@@ -1,8 +1,13 @@
 package com.danta.sidqi.phonestore;
 
+import static io.realm.Realm.getApplicationContext;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,9 +17,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 
 import org.json.JSONArray;
@@ -28,10 +35,13 @@ public class Home extends Fragment {
     RecyclerView rvpopular, rvforyou;
     ArrayList<Model> desclist, latestlist;
     ReqAdapter reqadapter;
+    LatestAdapter latestAdapter;
+    ProgressDialog loding;
 
 
 
-    String recUrl = "https://api-mobilespecs.azharimm.site/v2/brands/samsung-phones-9?page=2";
+
+    String recUrl = " https://api-mobilespecs.azharimm.site/v2/brands/xiaomi-phones-80?page=1";
     String lateUrl = "https://api-mobilespecs.azharimm.site/v2/latest";
 
     public Home() {
@@ -43,7 +53,10 @@ public class Home extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,39 +64,52 @@ public class Home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rvpopular = view.findViewById(R.id.rvpopular);
         rvforyou = view.findViewById(R.id.rvforyou);
-        getDataApi();
+
+        loding = new ProgressDialog(getActivity());
+        loding.setCancelable(false);
+        loding.setTitle("LODING SABAR");
+        loding.setMessage("Sedang menampilkan data");
+
+
+
         return view;
     }
 
-    void getDataApi() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        desclist = new ArrayList<>();
+        latestlist = new ArrayList<>();
+        getDataApi();
+        getLatestApi();
+
+    }
+    public void getDataApi(){
+        loding.show();
         AndroidNetworking.get(recUrl)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
-            @Override
-            public void onResponse(JSONObject response) {
-                desclist = new ArrayList<>();
-                try {
-                    JSONArray phones = response.getJSONArray("phones");
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            loding.dismiss();
+                            JSONObject data = response.getJSONObject("data");
+                            JSONArray phones = data.getJSONArray("phones");
+                            for (int i = 0; i < 4; i++){
+                                JSONObject phones_object = phones.getJSONObject(i);
+                                String phone_name = phones_object.getString("phone_name");
+                                String image = phones_object.getString("image");
+                                desclist.add(new Model(phone_name, image));
+                            }
+                            reqadapter = new ReqAdapter(desclist);
+                            RecyclerView.LayoutManager layoutmanager = new GridLayoutManager(getActivity(),2);
+                            rvpopular.setLayoutManager(layoutmanager);
+                            rvpopular.setAdapter(reqadapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
-                    for (int i = 0; i < 4; i++){
-                        JSONObject phoneobject = phones.getJSONObject(i);
-                        String phone_name = phoneobject.getString("phone_name");
-                        String detail = phoneobject.getString("detail");
-                        String image = phoneobject.getString("image");
-                        desclist.add(new Model(phone_name, image, detail));
                     }
-                    RecyclerView.LayoutManager layoutmanager = new GridLayoutManager(getActivity(),2);
-                    rvpopular.setLayoutManager(layoutmanager);
-                    rvpopular.setAdapter(reqadapter);
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-
-
-
-                }
-            }
 
                     @Override
                     public void onError(ANError anError) {
@@ -91,7 +117,43 @@ public class Home extends Fragment {
                     }
                 });
 
+
+    }
+    public void getLatestApi(){
+        AndroidNetworking.get(lateUrl)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject data = response.getJSONObject("data");
+                            JSONArray latePhone = data.getJSONArray("phones");
+                            for (int o = 0; o < 4; o++){
+                                JSONObject late_object = latePhone.getJSONObject(o);
+                                String late_name = late_object.getString("phone_name");
+                                String late_image = late_object.getString("image");
+                                latestlist.add(new Model(late_name, late_image, false));
+                            }
+                            latestAdapter = new LatestAdapter(latestlist);
+                            RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 2);
+                            rvforyou.setAdapter(latestAdapter);
+                            rvforyou.setLayoutManager(manager);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+
+                    }
+                });
+
+    }
+
+
+
             }
 
 
-        }

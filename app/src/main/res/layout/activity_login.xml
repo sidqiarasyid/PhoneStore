@@ -69,16 +69,19 @@
         android:textColor="@color/black"
         android:textAllCaps="false"
         android:text="Login"
+        android:textAlignment="center"
         android:background="@drawable/btnlogin"
         android:layout_gravity="center"
         android:layout_width="276dp"
         android:layout_height="45dp"/>
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:text="Register"/>
 

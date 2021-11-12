@@ -30,7 +30,7 @@ class LoginHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + table_name + "(" + rov_id + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + rov_username + " TEXT," + rov_email + "TEXT," + rov_password + " TEXT)";
+                + rov_username + " TEXT," + rov_password + " TEXT)";
         db.execSQL(query);
     }
 

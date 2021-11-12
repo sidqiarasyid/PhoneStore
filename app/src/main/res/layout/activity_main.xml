@@ -21,6 +21,7 @@
         android:layout_gravity="bottom"
         android:foreground="?attr/selectableItemBackground"
         app:menu="@menu/menu"
+        android:layout_marginTop="10dp"
         android:background="@color/white"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"

@@ -6,6 +6,8 @@ import java.io.Serializable;
 
 public class Model {
     private String phoneName;
+    private String latePhoneName;
+    private String lateImageName;
     private String image;
     private String detailUrl;
     private String releaseDate;
@@ -16,15 +18,32 @@ public class Model {
     private String thumbnail;
 
 
+    public String getLatePhoneName() {
+        return latePhoneName;
+    }
 
+    public void setLatePhoneName(String latePhoneName) {
+        this.latePhoneName = latePhoneName;
+    }
+
+    public String getLateImageName() {
+        return lateImageName;
+    }
+
+    public void setLateImageName(String lateImageName) {
+        this.lateImageName = lateImageName;
+    }
 
     public Model() {
     }
 
-    public Model(String phone_name, String image, String detail) {
+    public Model(String phone_name, String image) {
         this.phoneName = phone_name;
         this.image = image;
-        this.detailUrl = detail;
+    }
+    public Model (String latePhoneName, String lateImageName, Boolean ngisi){
+        this.latePhoneName = latePhoneName;
+        this.lateImageName = lateImageName;
     }
 
     public String getPhoneName() {

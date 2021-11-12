@@ -27,7 +27,9 @@
         android:src="@drawable/foto_profile"/>
 
     <EditText
+        android:textColor="@color/black"
         android:id="@+id/txChangeUsername"
+        android:backgroundTint="@color/black"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
@@ -37,6 +39,8 @@
         android:hint="Username"
         android:inputType="textPersonName" />
     <EditText
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"
         android:id="@+id/txChangeEmail"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
@@ -46,16 +50,20 @@
         android:layout_height="50dp"
         android:hint="Email"
         android:inputType="textEmailSubject" />
+
     <EditText
+        android:textColor="@color/black"
+        android:backgroundTint="@color/black"
         android:id="@+id/txChangePhoneNumber"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:textColorHint="#B4B1AE"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
         android:hint="Phone Number"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:textColorHint="#B4B1AE" />
+
     <Button
         android:id="@+id/btnSave"
         android:textSize="17sp"

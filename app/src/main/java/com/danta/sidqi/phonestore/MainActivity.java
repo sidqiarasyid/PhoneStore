@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -16,10 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        load(new Home());
 
         bottomnav = findViewById(R.id.bottomnav);
 
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         load(fragment);
                         return true;
                     case R.id.item_user:
-                        fragment = new Profile();
+                        fragment = new ProfileFragment();
                         load(fragment);
                         return true;
                 }
