@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "532009768647",
+    "project_id": "phonestore-fb094",
+    "storage_bucket": "phonestore-fb094.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532009768647:android:a3595447cc0d456119d0e2",
+        "android_client_info": {
+          "package_name": "com.danta.sidqi.phonestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532009768647-ahidget4envb86df59ml5lbv41g6efbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb8seoXcF2gbcqyHhp1apqdk4nA_Jbtvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532009768647-ahidget4envb86df59ml5lbv41g6efbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
