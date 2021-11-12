@@ -14,6 +14,7 @@
         android:id="@+id/detailPhone"
         android:layout_width="125dp"
         android:layout_height="175dp"
+        android:src="@drawable/imgphone"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="140dp" />
 

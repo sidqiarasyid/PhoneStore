@@ -9,6 +9,8 @@ public class Model {
     private String latePhoneName;
     private String lateImageName;
     private String image;
+    private String listName;
+    private String listImage;
     private String detailUrl;
     private String releaseDate;
     private String os;
@@ -17,6 +19,21 @@ public class Model {
     private String brand;
     private String thumbnail;
 
+    public String getListName() {
+        return listName;
+    }
+
+    public void setListName(String listName) {
+        this.listName = listName;
+    }
+
+    public String getListImage() {
+        return listImage;
+    }
+
+    public void setListImage(String listImage) {
+        this.listImage = listImage;
+    }
 
     public String getLatePhoneName() {
         return latePhoneName;
@@ -44,6 +61,10 @@ public class Model {
     public Model (String latePhoneName, String lateImageName, Boolean ngisi){
         this.latePhoneName = latePhoneName;
         this.lateImageName = lateImageName;
+    }
+    public Model (String listName, String listImage, Boolean ngisis, Boolean ngisijuga){
+        this.listName = listName;
+        this.listImage = listImage;
     }
 
     public String getPhoneName() {

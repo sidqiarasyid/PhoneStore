@@ -1,64 +1,98 @@
 package com.danta.sidqi.phonestore;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Phone#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Phone extends Fragment {
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import java.util.ArrayList;
+
+public class Phone extends Fragment{
+
+    ProgressDialog listProgressDialog;
+    RecyclerView rvPhoneList;
+    ArrayList<Model> phonelist;
+    ReqAdapter reqAdapter;
+    String ListURL = "https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-9?page=1";
+
 
     public Phone() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Phone.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Phone newInstance(String param1, String param2) {
-        Phone fragment = new Phone();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_phone, container, false);
+        listProgressDialog = new ProgressDialog(getActivity());
+        listProgressDialog.setCancelable(false);
+        listProgressDialog.setTitle("LODING");
+        listProgressDialog.setMessage("yg sabar nggeh");
+        View view = inflater.inflate(R.layout.fragment_phone, container, false );
+        rvPhoneList = view.findViewById(R.id.rvlist);
+        phonelist = new ArrayList<>();
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getListPhone();
+    }
+    void getListPhone(){
+        listProgressDialog.show();
+        AndroidNetworking.get(ListURL).build().getAsJSONObject(new JSONObjectRequestListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                try {
+                    listProgressDialog.dismiss();
+                    JSONObject datalist = response.getJSONObject("data");
+                    JSONArray listphone = datalist.getJSONArray("phones");
+                    for (int i = 0; i <= 40;i++){
+                        JSONObject listobject = listphone.getJSONObject(i);
+                        String phonename = listobject.getString("phone_name");
+                        String image = listobject.getString("image");
+                        phonelist.add(new Model(phonename ,image));
+                    }
+                    RecyclerView.LayoutManager gridmanager = new GridLayoutManager(getActivity(),2);
+                    reqAdapter = new ReqAdapter(phonelist);
+                    rvPhoneList.setLayoutManager(gridmanager);
+                    rvPhoneList.setAdapter(reqAdapter);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(ANError anError) {
+
+            }
+        });
     }
 }

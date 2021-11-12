@@ -8,9 +8,8 @@
     android:background="#F0E5CF"
     android:orientation="vertical">
 
-
     <ImageView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:layout_gravity="center"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -44,7 +43,7 @@
                 android:layout_height="25dp"
                 android:text="Raden Umar Said Kudus"
                 android:textAlignment="center"
-                android:textColor="@color/black"/>
+                android:textColor="#B4B1AE"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -61,17 +60,15 @@
                 android:text="Email"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"/>
-
             <TextView
                 android:id="@+id/txEmail"
+                android:textSize="15dp"
+                android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:layout_marginTop="17dp"
                 android:text="RadenUmarSiad@gmail.com"
                 android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
-
+                android:textColor="#B4B1AE"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -96,7 +93,7 @@
                 android:layout_height="25dp"
                 android:text="000 999 888 666"
                 android:textAlignment="center"
-                android:textColor="@color/black"/>
+                android:textColor="#B4B1AE"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -109,7 +106,7 @@
                 android:textSize="17dp"
                 android:textStyle="bold"
                 android:layout_marginTop="25dp"
-                android:backgroundTint="@color/bg"
+                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textAllCaps="false"
                 android:text="Edit Profile"
