@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
@@ -72,6 +73,7 @@ public class Home extends Fragment {
 
 
 
+
         return view;
     }
 
@@ -87,6 +89,7 @@ public class Home extends Fragment {
     public void getDataApi(){
         loding.show();
         AndroidNetworking.get(recUrl)
+                .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
@@ -99,7 +102,8 @@ public class Home extends Fragment {
                                 JSONObject phones_object = phones.getJSONObject(i);
                                 String phone_name = phones_object.getString("phone_name");
                                 String image = phones_object.getString("image");
-                                desclist.add(new Model(phone_name, image));
+                                String detailurl = phones_object.getString("detail");
+                                desclist.add(new Model(phone_name, image, detailurl));
                             }
                             reqadapter = new ReqAdapter(desclist);
                             RecyclerView.LayoutManager layoutmanager = new GridLayoutManager(getActivity(),2);
@@ -121,7 +125,9 @@ public class Home extends Fragment {
     }
     public void getLatestApi(){
         AndroidNetworking.get(lateUrl)
+                .setPriority(Priority.HIGH)
                 .build()
+
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -132,7 +138,8 @@ public class Home extends Fragment {
                                 JSONObject late_object = latePhone.getJSONObject(o);
                                 String late_name = late_object.getString("phone_name");
                                 String late_image = late_object.getString("image");
-                                latestlist.add(new Model(late_name, late_image, false));
+                                String late_detail = late_object.getString("detail");
+                                latestlist.add(new Model(late_name, late_image,late_detail, false));
                             }
                             latestAdapter = new LatestAdapter(latestlist);
                             RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 2);

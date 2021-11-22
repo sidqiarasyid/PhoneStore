@@ -118,7 +118,8 @@
             android:text="@string/backlg"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="15dp"/>
 
 
 
@@ -126,4 +127,5 @@
 
 
 </ScrollView>
+
 

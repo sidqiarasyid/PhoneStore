@@ -1,5 +1,6 @@
 package com.danta.sidqi.phonestore;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -30,9 +32,19 @@ public class LatestAdapter extends RecyclerView.Adapter<LatestAdapter.LateViewHo
 
     @Override
     public void onBindViewHolder(@NonNull LateViewHolder holder, int position) {
-        holder.txtLatePName.setText(lateList.get(position).getLatePhoneName());
-        Picasso.get().load(lateList.get(position).getLateImageName()).resize(100, 150).into(holder.imgLate);
-
+        Model del = lateList.get(position);
+        holder.txtLatePName.setText(del.getLatePhoneName());
+        Picasso.get().load(del.getLateImageName()).resize(100, 150).into(holder.imgLate);
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Detail.class);
+                intent.putExtra("name", del.getLatePhoneName());
+                intent.putExtra("image", del.getLateImageName());
+                intent.putExtra("detail", del.getLateUrl());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -41,12 +53,16 @@ public class LatestAdapter extends RecyclerView.Adapter<LatestAdapter.LateViewHo
     }
 
     public static class LateViewHolder extends RecyclerView.ViewHolder {
-        private TextView txtLatePName;
-        private ImageView imgLate;
+        TextView txtLatePName;
+        ImageView imgLate;
+        CardView card;
+
         public LateViewHolder(@NonNull View itemView) {
             super(itemView);
             txtLatePName = itemView.findViewById(R.id.tx_phone_name);
             imgLate = itemView.findViewById(R.id.img_phone);
+            card = itemView.findViewById(R.id.container);
+
 
         }
     }

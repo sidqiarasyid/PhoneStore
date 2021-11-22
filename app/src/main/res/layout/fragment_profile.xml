@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -37,22 +37,22 @@
                 android:layout_height="25dp"/>
             <TextView
                 android:id="@+id/txUsername"
-                android:textSize="15dp"
-                android:layout_marginTop="17dp"
+                android:textSize="20sp"
+                android:layout_marginTop="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:text="Raden Umar Said Kudus"
+                android:text=""
                 android:textAlignment="center"
-                android:textColor="#B4B1AE"/>
+                android:textColor="@color/black"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:background="#B4B1AE"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
             <TextView
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -62,22 +62,22 @@
                 android:layout_height="25dp"/>
             <TextView
                 android:id="@+id/txEmail"
-                android:textSize="15dp"
+                android:textSize="20sp"
                 android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:text="RadenUmarSiad@gmail.com"
+                android:text=""
                 android:textAlignment="center"
-                android:textColor="#B4B1AE"/>
+                android:textColor="@color/black"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:background="#B4B1AE"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
             <TextView
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -87,18 +87,18 @@
                 android:layout_height="25dp"/>
             <TextView
                 android:id="@+id/txPhoneNumber"
-                android:textSize="15dp"
+                android:textSize="20sp"
                 android:layout_marginTop="17dp"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:text="000 999 888 666"
+                android:text=""
                 android:textAlignment="center"
-                android:textColor="#B4B1AE"/>
+                android:textColor="@color/black"/>
             <View
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:background="#B4B1AE"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
             <Button

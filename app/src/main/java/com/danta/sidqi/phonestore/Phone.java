@@ -1,19 +1,27 @@
 package com.danta.sidqi.phonestore;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 
@@ -24,12 +32,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class Phone extends Fragment{
+    CardView btnapple, btnvivo, btnsamsung, btnxiaomi, btnoppo, btnhuawei;
+    ReqAdapter adapter;
+    ProgressDialog phoneDialog;
 
-    ProgressDialog listProgressDialog;
-    RecyclerView rvPhoneList;
-    ArrayList<Model> phonelist;
-    ReqAdapter reqAdapter;
-    String ListURL = "https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-9?page=1";
+
 
 
     public Phone() {
@@ -48,51 +55,65 @@ public class Phone extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        listProgressDialog = new ProgressDialog(getActivity());
-        listProgressDialog.setCancelable(false);
-        listProgressDialog.setTitle("LODING");
-        listProgressDialog.setMessage("yg sabar nggeh");
+
         View view = inflater.inflate(R.layout.fragment_phone, container, false );
-        rvPhoneList = view.findViewById(R.id.rvlist);
-        phonelist = new ArrayList<>();
+        btnapple = view.findViewById(R.id.btnapple);
+        btnhuawei = view.findViewById(R.id.btnhuawer);
+        btnoppo = view.findViewById(R.id.btnoppo);
+        btnsamsung = view.findViewById(R.id.btnsamsung);
+        btnxiaomi = view.findViewById(R.id.btnxiaomi);
+        btnvivo = view.findViewById(R.id.btnvivo);
+        Intent pass = new Intent(getContext(), Brand.class);
+
+
+
+
+        btnapple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pass.putExtra("val", 1);
+                startActivity(pass);
+            }
+        });
+        btnvivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pass.putExtra("val", 2);
+                startActivity(pass);
+            }
+        });
+        btnxiaomi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pass.putExtra("val", 3);
+                startActivity(pass);
+            }
+        });
+        btnsamsung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pass.putExtra("val", 4);
+                startActivity(pass);
+            }
+        });
+        btnoppo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pass.putExtra("val", 5);
+                startActivity(pass);
+            }
+        });
+        btnhuawei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pass.putExtra("val", 6);
+                startActivity(pass);
+            }
+        });
         return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        getListPhone();
     }
-    void getListPhone(){
-        listProgressDialog.show();
-        AndroidNetworking.get(ListURL).build().getAsJSONObject(new JSONObjectRequestListener() {
-            @Override
-            public void onResponse(JSONObject response) {
 
-                try {
-                    listProgressDialog.dismiss();
-                    JSONObject datalist = response.getJSONObject("data");
-                    JSONArray listphone = datalist.getJSONArray("phones");
-                    for (int i = 0; i <= 40;i++){
-                        JSONObject listobject = listphone.getJSONObject(i);
-                        String phonename = listobject.getString("phone_name");
-                        String image = listobject.getString("image");
-                        phonelist.add(new Model(phonename ,image));
-                    }
-                    RecyclerView.LayoutManager gridmanager = new GridLayoutManager(getActivity(),2);
-                    reqAdapter = new ReqAdapter(phonelist);
-                    rvPhoneList.setLayoutManager(gridmanager);
-                    rvPhoneList.setAdapter(reqAdapter);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
 
-            @Override
-            public void onError(ANError anError) {
 
-            }
-        });
-    }
-}

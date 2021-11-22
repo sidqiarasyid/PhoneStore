@@ -90,7 +90,7 @@ public class Register extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(Register.this, "Register Complete", Toast.LENGTH_SHORT).show();
                             userID = registerAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = firestore.collection("user").document(userID);
+                            DocumentReference documentReference = firestore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
                             user.put("valName", usernameval);
                             user.put("valPhone", phoneNum);

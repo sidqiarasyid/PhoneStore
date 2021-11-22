@@ -12,12 +12,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Log in"
         android:textColor="@color/black"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
         android:id="@+id/txPassword"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textColorHint="#B4B1AE"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -63,16 +63,16 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:textSize="17dp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/black"
         android:textAllCaps="false"
         android:text="Login"
         android:textAlignment="center"
         android:background="@drawable/btnlogin"
         android:layout_gravity="center"
-        android:layout_width="276dp"
+        android:layout_width="280dp"
         android:layout_height="45dp"/>
 
     <TextView
@@ -82,6 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
+        android:textSize="18sp"
         android:textColor="@color/black"
         android:text="Register"/>
 

@@ -16,9 +16,10 @@
         android:layout_height="175dp"
         android:src="@drawable/imgphone"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="140dp" />
+        android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/txtdetailname"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,11 +33,11 @@
         android:layout_marginBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Spesification"
+        android:text="Specifications"
         android:textColor="@color/black"
         android:fontFamily="@font/roboto"
         android:textSize="25sp"
-        android:layout_marginLeft="25dp" />
+        android:layout_marginStart="25dp" />
 
 
    <ScrollView
@@ -64,7 +65,7 @@
                    android:textColor="@color/black"
                    android:textSize="23sp"
                    android:padding="10dp"
-                   android:layout_marginLeft="10dp"/>
+                   android:layout_marginStart="10dp"/>
 
            </LinearLayout>
 
@@ -78,7 +79,7 @@
                    android:id="@+id/txDimension"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
+                   android:layout_marginStart="10dp"
                    android:fontFamily="@font/roboto"
                    android:padding="10dp"
                    android:text="228g, 7.4mm thickness"
@@ -94,7 +95,7 @@
 
 
                <TextView
-                   android:id="@+id/txIos"
+                   android:id="@+id/txOs"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/roboto"
@@ -102,7 +103,7 @@
                    android:textColor="@color/black"
                    android:textSize="23sp"
                    android:padding="10dp"
-                   android:layout_marginLeft="10dp"/>
+                   android:layout_marginStart="10dp"/>
 
            </LinearLayout>
 
@@ -116,7 +117,7 @@
                    android:id="@+id/txStorage"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginLeft="10dp"
+                   android:layout_marginStart="10dp"
                    android:fontFamily="@font/roboto"
                    android:padding="10dp"
                    android:text="128GB/256GB/512GB storage, no card slot"

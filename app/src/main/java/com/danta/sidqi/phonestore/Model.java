@@ -11,6 +11,7 @@ public class Model {
     private String image;
     private String listName;
     private String listImage;
+    private String lateUrl;
     private String detailUrl;
     private String releaseDate;
     private String os;
@@ -18,6 +19,41 @@ public class Model {
     private String dimension;
     private String brand;
     private String thumbnail;
+    private String searchname;
+    private String searchimage;
+    private String searhdetail;
+
+    public String getSearchname() {
+        return searchname;
+    }
+
+    public void setSearchname(String searchname) {
+        this.searchname = searchname;
+    }
+
+    public String getSearchimage() {
+        return searchimage;
+    }
+
+    public void setSearchimage(String searchimage) {
+        this.searchimage = searchimage;
+    }
+
+    public String getSearhdetail() {
+        return searhdetail;
+    }
+
+    public void setSearhdetail(String searhdetail) {
+        this.searhdetail = searhdetail;
+    }
+
+    public String getLateUrl() {
+        return lateUrl;
+    }
+
+    public void setLateUrl(String lateUrl) {
+        this.lateUrl = lateUrl;
+    }
 
     public String getListName() {
         return listName;
@@ -54,18 +90,19 @@ public class Model {
     public Model() {
     }
 
-    public Model(String phone_name, String image) {
+    public Model(String phone_name, String image, String detailUrl) {
         this.phoneName = phone_name;
         this.image = image;
+        this.detailUrl = detailUrl;
     }
-    public Model (String latePhoneName, String lateImageName, Boolean ngisi){
+    public Model (String latePhoneName, String lateImageName, String lateUrl, Boolean ngisi){
         this.latePhoneName = latePhoneName;
         this.lateImageName = lateImageName;
+        this.lateUrl = lateUrl;
     }
-    public Model (String listName, String listImage, Boolean ngisis, Boolean ngisijuga){
-        this.listName = listName;
-        this.listImage = listImage;
-    }
+    //
+
+
 
     public String getPhoneName() {
         return phoneName;
