@@ -99,7 +99,7 @@ public class Brand extends AppCompatActivity {
                                 JSONObject brand_object = brand_array.getJSONObject(i);
                                 String phone_name = brand_object.getString("phone_name");
                                 String image = brand_object.getString("image");
-                                String detail = brand_object.getString("detail");
+                                String detail = brand_object.getString("slug");
                                 brandList.add(new Model(phone_name, image, detail));
                             }
                             reqAdapter = new ReqAdapter(brandList);

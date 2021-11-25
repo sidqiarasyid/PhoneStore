@@ -68,7 +68,7 @@ public class Home extends Fragment {
 
         loding = new ProgressDialog(getActivity());
         loding.setCancelable(false);
-        loding.setTitle("LODING SABAR");
+        loding.setTitle("Mohon Tunggu");
         loding.setMessage("Sedang menampilkan data");
 
 
@@ -102,7 +102,7 @@ public class Home extends Fragment {
                                 JSONObject phones_object = phones.getJSONObject(i);
                                 String phone_name = phones_object.getString("phone_name");
                                 String image = phones_object.getString("image");
-                                String detailurl = phones_object.getString("detail");
+                                String detailurl = phones_object.getString("slug");
                                 desclist.add(new Model(phone_name, image, detailurl));
                             }
                             reqadapter = new ReqAdapter(desclist);
@@ -138,7 +138,7 @@ public class Home extends Fragment {
                                 JSONObject late_object = latePhone.getJSONObject(o);
                                 String late_name = late_object.getString("phone_name");
                                 String late_image = late_object.getString("image");
-                                String late_detail = late_object.getString("detail");
+                                String late_detail = late_object.getString("slug");
                                 latestlist.add(new Model(late_name, late_image,late_detail, false));
                             }
                             latestAdapter = new LatestAdapter(latestlist);
